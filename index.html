@@ -49,63 +49,22 @@
           </ul>
         </div>
 
-        <div id="simulador" class="pos-card" aria-label="Simulador interactivo de CajaRápida">
-          <div class="pos-topbar">
+        <div id="simulador" class="demo-frame-card" aria-label="Programa interactivo CajaRápida">
+          <div class="demo-frame-bar">
             <div>
-              <strong>Caja Mostrador #1</strong>
-              <span class="pos-sub">Prueba interactiva</span>
+              <strong>CajaRápida · Demo en vivo</strong>
+              <span class="pos-sub">Programa real funcionando en tu navegador</span>
             </div>
-            <button id="toggleOffline" type="button" class="net-toggle offline" aria-pressed="true">
-              <span class="dot"></span>
-              <span id="netLabel">Modo Offline activo</span>
-            </button>
+            <a href="caja-rapida.html" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
+              Pantalla completa
+            </a>
           </div>
-
-          <div class="pos-products">
-            <button type="button" class="prod-btn" data-name="Café + Medialunas" data-price="3200">
-              <span>Café + Medialunas</span>
-              <strong class="mono">$3.200</strong>
-            </button>
-            <button type="button" class="prod-btn" data-name="Gaseosa 1.5L" data-price="2500">
-              <span>Gaseosa 1.5L</span>
-              <strong class="mono">$2.500</strong>
-            </button>
-            <button type="button" class="prod-btn" data-name="Pan x Kg" data-price="2100">
-              <span>Pan x Kg</span>
-              <strong class="mono">$2.100</strong>
-            </button>
-            <button type="button" class="prod-btn" data-name="Artículo varios" data-price="4800">
-              <span>Artículo varios</span>
-              <strong class="mono">$4.800</strong>
-            </button>
-          </div>
-
-          <div class="pos-ticket">
-            <div class="ticket-head">
-              <span>Ticket actual</span>
-              <button id="btnClearTicket" type="button" class="link-btn">Limpiar</button>
-            </div>
-            <ul id="ticketList" class="ticket-list">
-              <li class="ticket-empty">Toca un producto arriba para simular un cobro</li>
-            </ul>
-            <div class="ticket-total">
-              <span>Total a cobrar</span>
-              <strong id="ticketTotal" class="mono">$0</strong>
-            </div>
-          </div>
-
-          <div class="pos-payments">
-            <button type="button" class="pay-btn active" data-method="Efectivo">Efectivo</button>
-            <button type="button" class="pay-btn" data-method="Tarjeta">Tarjeta</button>
-            <button type="button" class="pay-btn" data-method="Transferencia">Transferencia</button>
-          </div>
-
-          <div class="pos-footer">
-            <button id="btnConfirmSale" type="button" class="btn btn-primary btn-full">
-              Registrar cobro al instante
-            </button>
-            <p id="posFeedback" class="pos-feedback" aria-live="polite"></p>
-          </div>
+          <iframe
+            src="caja-rapida.html"
+            title="Simulador real de CajaRápida"
+            class="demo-iframe"
+            loading="lazy"
+          ></iframe>
         </div>
       </div>
     </section>
