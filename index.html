@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CajaRápida — Gestión de cobros y caja 100% offline</title>
+  <meta name="description" content="Sistema ágil de gestión de cobros y cierre de caja para comercios. Funciona 100% offline en tu equipo, sin depender de internet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-badge">CR</span>
+        <span class="brand-name">CajaRápida</span>
+      </a>
+      <div class="nav-right">
+        <span class="offline-pill">
+          <span class="dot" aria-hidden="true"></span>
+          Funciona 100% Offline
+        </span>
+        <a href="#contacto" class="btn btn-primary btn-sm">Pedir demo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Sistema de cobros para mostrador</p>
+          <h1>Cobra rápido, cierra la caja en minutos y nunca dependas de internet.</h1>
+          <p class="hero-lead">
+            CajaRápida corre directo en tu <strong>PC o celular Android</strong> de forma <strong>100% offline</strong>.
+            Registra ventas en efectivo, tarjeta o transferencia y controla tu caja diaria sin cortes,
+            sin demoras ni sistemas complicados.
+          </p>
+          <div class="hero-actions">
+            <a id="ctaHeroWa" href="#contacto" class="btn btn-primary btn-lg">Consultar por WhatsApp</a>
+            <a href="#simulador" class="btn btn-secondary btn-lg">Probar simulador</a>
+          </div>
+          <ul class="hero-checks">
+            <li>Funciona en PC y Android</li>
+            <li>Cero dependencia del Wi-Fi</li>
+            <li>Pensado para atender rápido</li>
+          </ul>
+        </div>
+
+        <div id="simulador" class="pos-card" aria-label="Simulador interactivo de CajaRápida">
+          <div class="pos-topbar">
+            <div>
+              <strong>Caja Mostrador #1</strong>
+              <span class="pos-sub">Prueba interactiva</span>
+            </div>
+            <button id="toggleOffline" type="button" class="net-toggle offline" aria-pressed="true">
+              <span class="dot"></span>
+              <span id="netLabel">Modo Offline activo</span>
+            </button>
+          </div>
+
+          <div class="pos-products">
+            <button type="button" class="prod-btn" data-name="Café + Medialunas" data-price="3200">
+              <span>Café + Medialunas</span>
+              <strong class="mono">$3.200</strong>
+            </button>
+            <button type="button" class="prod-btn" data-name="Gaseosa 1.5L" data-price="2500">
+              <span>Gaseosa 1.5L</span>
+              <strong class="mono">$2.500</strong>
+            </button>
+            <button type="button" class="prod-btn" data-name="Pan x Kg" data-price="2100">
+              <span>Pan x Kg</span>
+              <strong class="mono">$2.100</strong>
+            </button>
+            <button type="button" class="prod-btn" data-name="Artículo varios" data-price="4800">
+              <span>Artículo varios</span>
+              <strong class="mono">$4.800</strong>
+            </button>
+          </div>
+
+          <div class="pos-ticket">
+            <div class="ticket-head">
+              <span>Ticket actual</span>
+              <button id="btnClearTicket" type="button" class="link-btn">Limpiar</button>
+            </div>
+            <ul id="ticketList" class="ticket-list">
+              <li class="ticket-empty">Toca un producto arriba para simular un cobro</li>
+            </ul>
+            <div class="ticket-total">
+              <span>Total a cobrar</span>
+              <strong id="ticketTotal" class="mono">$0</strong>
+            </div>
+          </div>
+
+          <div class="pos-payments">
+            <button type="button" class="pay-btn active" data-method="Efectivo">Efectivo</button>
+            <button type="button" class="pay-btn" data-method="Tarjeta">Tarjeta</button>
+            <button type="button" class="pay-btn" data-method="Transferencia">Transferencia</button>
+          </div>
+
+          <div class="pos-footer">
+            <button id="btnConfirmSale" type="button" class="btn btn-primary btn-full">
+              Registrar cobro al instante
+            </button>
+            <p id="posFeedback" class="pos-feedback" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="section-head">
+          <h2>Por qué un sistema offline es mejor para tu comercio</h2>
+          <p>En el mostrador no puedes esperar a que cargue una página o vuelva la señal.</p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-icon">01</div>
+            <h3>Cero interrupciones</h3>
+            <p>Si se cae internet o anda lento el Wi-Fi, tu caja sigue cobrando exactamente igual. Tus ventas nunca se frenan.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">02</div>
+            <h3>Velocidad real</h3>
+            <p>Al ejecutarse directo en tu PC o celular Android, cada cobro y consulta responde en milisegundos, sin esperas de servidor.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">03</div>
+            <h3>Tus datos son tuyos</h3>
+            <p>Toda la información de tus ventas y movimientos queda guardada en tu propio equipo, bajo tu control total.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Todo lo que necesitas para el control diario</h2>
+          <p>Sin funciones de relleno ni menús eternos que nadie usa.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <h3>Cobros por medio de pago</h3>
+            <p>Diferencia al instante cuánto entró en efectivo, débito, crédito, QR o transferencia bancaria.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Cierre de caja en segundos</h3>
+            <p>Al terminar el turno o el día, obtienes el resumen exacto de ingresos, egresos y saldo esperado en caja.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Registro de gastos y retiros</h3>
+            <p>Anota pagos a proveedores o retiros de caja chica para que los números cierren siempre sin sorpresas.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Fácil para cualquier empleado</h3>
+            <p>Pantalla clara y directa: en 10 minutos cualquier persona del local aprende a cobrar sin errores.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ideal para comercios de barrio y atención rápida</h2>
+        </div>
+        <div class="rubros-wrap">
+          <span class="rubro-pill">Kioscos y Drugstores</span>
+          <span class="rubro-pill">Almacenes y Autoservicios</span>
+          <span class="rubro-pill">Panaderías</span>
+          <span class="rubro-pill">Verdulerías y Carnicerías</span>
+          <span class="rubro-pill">Ferreterías</span>
+          <span class="rubro-pill">Indumentaria y Calzado</span>
+          <span class="rubro-pill">Librerías y Bazares</span>
+          <span class="rubro-pill">Veterinarias y Pet Shops</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container faq-wrap">
+        <div class="section-head">
+          <h2>Preguntas frecuentes</h2>
+        </div>
+
+        <details class="faq-item" open>
+          <summary>¿Realmente funciona sin conexión a internet?</summary>
+          <p>Sí. CajaRápida se instala en tu PC o celular Android y guarda los registros localmente. Puedes desconectar el Wi-Fi o los datos móviles y seguir cobrando y cerrando la caja normalmente.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿En qué dispositivos funciona? ¿Necesito un equipo nuevo?</summary>
+          <p>Funciona tanto en computadoras con Windows como en celulares o tablets Android. Al ser un sistema liviano y offline, corre fluido en equipos estándar sin necesidad de hardware costoso.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Cómo puedo verlo funcionando antes de decidir?</summary>
+          <p>Escríbenos por WhatsApp y coordinamos una demostración breve o te enviamos capturas y videos reales del sistema adaptado a tu rubro.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contacto" class="cta-section">
+      <div class="container cta-box">
+        <div>
+          <h2>¿Quieres probar CajaRápida en tu local?</h2>
+          <p>Escríbenos por WhatsApp y te mostramos cómo funciona en menos de 5 minutos, sin compromiso.</p>
+        </div>
+        <div class="cta-actions">
+          <a id="ctaBottomWa" href="#" target="_blank" rel="noopener" class="btn btn-light btn-lg">
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span><strong>CajaRápida</strong> · Gestión de cobros y caja offline</span>
+      <span class="footer-note">Hecho para comercios que no se detienen</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
