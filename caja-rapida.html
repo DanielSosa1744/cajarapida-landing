@@ -2113,27 +2113,28 @@
       gap: 1rem;
     }
 
-    /* GRILLA VERTICAL COMPACTA: 4 BOTONES EN COLUMNA + BOTÓN REDONDO VENTAS ABAJO */
+    /* GRILLA 2+2 CUADRADOS REDONDEADOS + BOTÓN PRINCIPAL GRANDE ABAJO */
     .dashboard-cards-grid {
       display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 0.55rem !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      gap: 0.8rem !important;
     }
 
-    /* TARJETAS SECUNDARIAS: COMPACTAS (50% ALTO), ANCHO COMPLETO, VERDE SUAVE */
+    /* TARJETAS 2+2: CUADRADAS CON PUNTAS REDONDEADAS, VERDE SUAVE */
     .dash-card:not(.dash-card-ventas-hero) {
       background: #E6F2EB !important;
       border: 1.5px solid #B8D8C6 !important;
-      border-radius: 11px !important;
-      padding: 0.55rem 1rem !important;
+      border-radius: 18px !important;
+      padding: 1.1rem 1rem !important;
       box-shadow: none !important;
-      min-height: 58px !important;
+      min-height: 128px !important;
       display: flex !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: flex-start !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
       text-align: left !important;
-      gap: 0.85rem !important;
+      gap: 0.75rem !important;
+      position: relative !important;
       transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.12s ease !important;
     }
 
@@ -2145,29 +2146,29 @@
     }
 
     .dash-card:not(.dash-card-ventas-hero):active {
-      transform: scale(0.99) !important;
+      transform: scale(0.985) !important;
       background: #CBE3D5 !important;
     }
 
     .dash-card:not(.dash-card-ventas-hero) .dash-card-icon-wrap {
       order: 1;
-      width: 38px !important;
-      height: 38px !important;
-      border-radius: 9px !important;
+      width: 48px !important;
+      height: 48px !important;
+      border-radius: 13px !important;
       box-shadow: none !important;
       border: 1px solid rgba(19, 58, 42, 0.12);
       flex-shrink: 0;
     }
 
     .dash-card:not(.dash-card-ventas-hero) .dash-card-icon-wrap svg {
-      width: 21px !important;
-      height: 21px !important;
+      width: 25px !important;
+      height: 25px !important;
       stroke-width: 2.1 !important;
     }
 
     .dash-card:not(.dash-card-ventas-hero) .dash-card-title {
       order: 2;
-      font-size: 1.05rem !important;
+      font-size: 1.12rem !important;
       font-weight: 700 !important;
       color: var(--text-main) !important;
       letter-spacing: -0.015em !important;
@@ -2176,12 +2177,14 @@
 
     .dash-card:not(.dash-card-ventas-hero) .dash-card-badge {
       order: 3;
-      position: static !important;
-      margin-left: auto !important;
-      font-size: 0.74rem !important;
+      position: absolute !important;
+      top: 0.95rem !important;
+      right: 0.95rem !important;
+      margin-left: 0 !important;
+      font-size: 0.72rem !important;
       font-weight: 700 !important;
-      padding: 0.2rem 0.6rem !important;
-      border-radius: 7px !important;
+      padding: 0.22rem 0.58rem !important;
+      border-radius: 8px !important;
     }
 
     /* Orden explícito solicitado: Compras, Gastos, Stock, Mermas */
@@ -2224,59 +2227,59 @@
     .badge-amber  { background: var(--orange-pale) !important; color: var(--orange-accent) !important; border-color: #FAD8BE; }
     .badge-orange { background: var(--orange-accent) !important; color: #FFFFFF !important; }
 
-    /* MÓDULO HERO VENTAS: BOTÓN REDONDO 30% MÁS GRANDE, CENTRADO ABAJO, GAMA VERDE PROFUNDO */
+    /* MÓDULO HERO VENTA: MISMO FORMATO REDONDEADO EN GRANDE ABAJO */
     .dash-card.dash-card-ventas-hero {
       order: 99 !important;
       grid-column: 1 / -1 !important;
-      justify-self: center !important;
-      width: 248px !important;
-      height: 248px !important;
-      min-height: 248px !important;
+      justify-self: stretch !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 112px !important;
       background: #246A49 !important;
-      border: 2.5px solid #133A2A !important;
-      border-radius: 50% !important;
-      box-shadow: 0 10px 28px rgba(19, 58, 42, 0.18) !important;
-      flex-direction: column !important;
+      border: 2px solid #133A2A !important;
+      border-radius: 18px !important;
+      box-shadow: 0 8px 22px rgba(19, 58, 42, 0.16) !important;
+      flex-direction: row !important;
       align-items: center !important;
       justify-content: center !important;
-      padding: 1.4rem !important;
-      margin: 0.65rem auto 0 auto !important;
-      gap: 0.7rem !important;
+      padding: 1.3rem 1.5rem !important;
+      margin: 0.15rem 0 0 0 !important;
+      gap: 1.1rem !important;
       position: relative !important;
     }
 
     .dash-card.dash-card-ventas-hero:hover {
       background: #1B5338 !important;
       border-color: #0E2B1E !important;
-      transform: scale(1.03) !important;
-      box-shadow: 0 12px 32px rgba(19, 58, 42, 0.24) !important;
+      transform: none !important;
+      box-shadow: 0 10px 26px rgba(19, 58, 42, 0.22) !important;
     }
 
     .dash-card.dash-card-ventas-hero:active {
-      transform: scale(0.97) !important;
+      transform: scale(0.985) !important;
     }
 
     .dash-card.dash-card-ventas-hero .dash-card-icon-wrap {
       background: #FFFFFF !important;
       color: var(--green-dark) !important;
-      width: 82px !important;
-      height: 82px !important;
-      border-radius: 50% !important;
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 15px !important;
       box-shadow: none !important;
       border: 1.5px solid #133A2A !important;
       flex-shrink: 0;
     }
 
     .dash-card.dash-card-ventas-hero .dash-card-icon-wrap svg {
-      width: 44px !important;
-      height: 44px !important;
+      width: 34px !important;
+      height: 34px !important;
       stroke: var(--green-dark) !important;
       stroke-width: 2.5 !important;
     }
 
     .dash-card.dash-card-ventas-hero .dash-card-title {
       color: #FFFFFF !important;
-      font-size: 1.85rem !important;
+      font-size: 1.75rem !important;
       font-weight: 800 !important;
       letter-spacing: -0.03em !important;
       text-shadow: none !important;
@@ -2285,13 +2288,15 @@
     }
 
     .dash-card.dash-card-ventas-hero .dash-card-badge {
-      position: static !important;
-      margin: -0.15rem 0 0 0 !important;
+      position: absolute !important;
+      top: 0.9rem !important;
+      right: 1rem !important;
+      margin: 0 !important;
       background: #133A2A !important;
       color: #FFFFFF !important;
-      font-size: 0.78rem !important;
+      font-size: 0.76rem !important;
       font-weight: 700 !important;
-      padding: 0.25rem 0.75rem !important;
+      padding: 0.25rem 0.7rem !important;
       border-radius: 999px !important;
       border: none !important;
       box-shadow: none !important;
@@ -2299,34 +2304,34 @@
 
     @media (max-width: 500px) {
       .main-container {
-        padding: 0.85rem 0.85rem 2rem 0.85rem;
+        padding: 0.85rem 0.85rem 6.5rem 0.85rem;
       }
       .dashboard-cards-grid {
-        gap: 0.48rem !important;
+        gap: 0.65rem !important;
       }
       .dash-card:not(.dash-card-ventas-hero) {
-        min-height: 54px !important;
-        padding: 0.5rem 0.85rem !important;
+        min-height: 116px !important;
+        padding: 0.95rem 0.9rem !important;
       }
       .dash-card:not(.dash-card-ventas-hero) .dash-card-title {
-        font-size: 0.98rem !important;
+        font-size: 1.02rem !important;
       }
       .dash-card.dash-card-ventas-hero {
-        width: 224px !important;
-        height: 224px !important;
-        min-height: 224px !important;
-        padding: 1.15rem !important;
-        gap: 0.55rem !important;
-        flex-direction: column !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 100px !important;
+        padding: 1.1rem 1.2rem !important;
+        gap: 0.9rem !important;
+        flex-direction: row !important;
         justify-content: center !important;
-        border-radius: 50% !important;
+        border-radius: 18px !important;
       }
       .dash-card.dash-card-ventas-hero .dash-card-icon-wrap {
-        width: 72px !important;
-        height: 72px !important;
+        width: 54px !important;
+        height: 54px !important;
       }
       .dash-card.dash-card-ventas-hero .dash-card-title {
-        font-size: 1.65rem !important;
+        font-size: 1.55rem !important;
       }
     }
 
@@ -2546,24 +2551,28 @@
       border-bottom: 1px solid #E7EFEA;
     }
 
-    /* DOCK INFERIOR (5 BOTONES PRINCIPALES) */
+    /* DOCK INFERIOR FLOTANTE CON BOTÓN REDONDO '+' EN EL CENTRO */
     body {
-      padding-bottom: 84px !important;
+      padding-bottom: 108px !important;
     }
 
     .bottom-dock {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: #FFFFFF;
-      border-top: 1px solid var(--border-color);
+      bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+      left: 14px;
+      right: 14px;
+      max-width: 560px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(8px);
+      border: 1.5px solid var(--border-color);
+      border-radius: 22px;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 0.45rem 0.5rem calc(0.45rem + env(safe-area-inset-bottom, 0px)) 0.5rem;
-      z-index: 95;
-      box-shadow: 0 -4px 18px rgba(19, 58, 42, 0.06);
+      padding: 0.4rem 0.55rem;
+      z-index: 450;
+      box-shadow: 0 10px 30px rgba(19, 58, 42, 0.14);
     }
 
     .bottom-dock-item {
@@ -2574,9 +2583,9 @@
       gap: 0.2rem;
       background: transparent;
       border: none;
-      border-radius: 12px;
-      padding: 0.4rem 0.75rem;
-      min-width: 62px;
+      border-radius: 13px;
+      padding: 0.38rem 0.65rem;
+      min-width: 58px;
       color: var(--text-muted);
       font-family: var(--font-body);
       font-size: 0.72rem;
@@ -2608,8 +2617,42 @@
       stroke-width: 2.2;
     }
 
+    .bottom-dock-plus-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--orange-accent);
+      color: #FFFFFF;
+      border: 3px solid #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: -16px;
+      box-shadow: 0 6px 18px rgba(232, 93, 4, 0.38);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform 0.12s ease, background-color 0.15s ease;
+    }
+
+    .bottom-dock-plus-btn:hover {
+      background: #D15203;
+      transform: scale(1.04);
+    }
+
+    .bottom-dock-plus-btn:active {
+      transform: scale(0.95);
+    }
+
+    .bottom-dock-plus-btn svg {
+      width: 26px;
+      height: 26px;
+      stroke: #FFFFFF;
+      fill: none;
+      stroke-width: 2.6;
+    }
+
     .fab-btn {
-      bottom: 78px !important;
+      display: none !important;
     }
 
     /* RESPETO A PREFERENCIA DE MOVIMIENTO REDUCIDO */
@@ -2620,6 +2663,117 @@
       }
     }
 
+    /* ============================================================ */
+    /* FASE 2: VISTAS FULL-SCREEN MOBILE-FIRST PARA MÓDULOS         */
+    /* ============================================================ */
+    [id^="modal-modulo-"].modal-overlay,
+    #popup-tpv-venta.subpopup-overlay {
+      background: var(--bg-app, #f8fafc);
+      padding: 0 !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      z-index: 410;
+    }
+    [id^="modal-modulo-"] .modal-sheet,
+    #popup-tpv-venta .subpopup-sheet {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      max-height: 100% !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-app, #f8fafc);
+    }
+    [id^="modal-modulo-"] .modal-head,
+    #popup-tpv-venta .modal-head {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0.85rem 1rem;
+    }
+    [id^="modal-modulo-"] .modal-body,
+    #popup-tpv-venta .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+      padding-bottom: 5.5rem;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* FASE 3: TABLAS RESPONSIVE -> TARJETAS TÁCTILES EN MOBILE */
+    @media (max-width: 640px) {
+      .data-table, .data-table thead, .data-table tbody, .data-table tr, .data-table td {
+        display: block;
+        width: 100%;
+      }
+      .data-table thead {
+        display: none;
+      }
+      .data-table tbody tr {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 0.75rem 0.85rem;
+        margin-bottom: 0.65rem;
+        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+      }
+      .data-table tbody td {
+        border: none !important;
+        padding: 0.25rem 0 !important;
+        text-align: left !important;
+        font-size: 0.86rem;
+      }
+      .data-table tbody td button,
+      .data-table tbody td .btn-sm {
+        min-height: 40px;
+        padding: 0.45rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      /* Listado compacto en líneas para Inventario y Stock */
+      #popup-inventario-completo .data-table tbody tr,
+      #popup-buscar-producto .data-table tbody tr,
+      #popup-stock-bajo .data-table tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.25rem 0.5rem;
+        padding: 0.55rem 0.45rem;
+        margin-bottom: 0;
+        border: none;
+        border-bottom: 1px solid #e2e8f0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+      #popup-inventario-completo .data-table tbody td,
+      #popup-buscar-producto .data-table tbody td,
+      #popup-stock-bajo .data-table tbody td {
+        width: auto;
+        padding: 0 !important;
+        font-size: 0.76rem;
+        white-space: nowrap;
+      }
+      #popup-inventario-completo .data-table tbody td:first-child,
+      #popup-buscar-producto .data-table tbody td:first-child,
+      #popup-stock-bajo .data-table tbody td:first-child {
+        flex: 1 1 55%;
+        min-width: 120px;
+        white-space: normal;
+        font-weight: 800;
+      }
+      #popup-inventario-completo .data-table tbody td:last-child,
+      #popup-buscar-producto .data-table tbody td:last-child,
+      #popup-stock-bajo .data-table tbody td:last-child {
+        margin-left: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2705,66 +2859,9 @@
       </div>
 
       <div class="sidebar-body">
-        <div style="font-size:0.72rem; color:var(--text-muted); font-weight:800;  margin-bottom:0.1rem;">Operaciones Diarias</div>
+        <div style="font-size:0.72rem; color:var(--text-muted); font-weight:800; margin-bottom:0.1rem;">Gestión y Ajustes</div>
 
-        <!-- 1. Ventas -->
-        <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('ventas')">
-          <div class="sidebar-nav-icon icon-ventas-hero">
-            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <div style="flex:1;">
-            <div style="font-weight:800; font-size:0.88rem;">Ventas</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">TPV mostrador, carrito y cobros</div>
-          </div>
-        </div>
-
-        <!-- 2. Stock -->
-        <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('stock')">
-          <div class="sidebar-nav-icon icon-stock">
-            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <div style="flex:1;">
-            <div style="font-weight:800; font-size:0.88rem;">Stock</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">Catálogo, precios y reposición</div>
-          </div>
-        </div>
-
-        <!-- 3. Compras -->
-        <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('compras')">
-          <div class="sidebar-nav-icon icon-compras">
-            <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          </div>
-          <div style="flex:1;">
-            <div style="font-weight:800; font-size:0.88rem;">Compras</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">Cajones, mercadería e historial</div>
-          </div>
-        </div>
-
-        <!-- 4. Gastos -->
-        <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('gastos')">
-          <div class="sidebar-nav-icon icon-gastos">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16l3-2 3 2 3-2 3 2V4a2 2 0 0 0-2-2z"/><line x1="16" y1="8" x2="8" y2="8"/><line x1="16" y1="12" x2="8" y2="12"/></svg>
-          </div>
-          <div style="flex:1;">
-            <div style="font-weight:800; font-size:0.88rem;">Gastos</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">Alquiler, flete, servicios y caja</div>
-          </div>
-        </div>
-
-        <!-- 5. Mermas -->
-        <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('mermas')">
-          <div class="sidebar-nav-icon icon-mermas">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div style="flex:1;">
-            <div style="font-weight:800; font-size:0.88rem;">Mermas y Descartes</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">Descartes, roturas y control</div>
-          </div>
-        </div>
-
-        <div style="font-size:0.72rem; color:var(--text-muted); font-weight:800;  margin-top:0.4rem; margin-bottom:0.1rem;">Gestión Comercial</div>
-
-        <!-- 6. Proveedores (REQUERIDO EN EL SIDEBAR) -->
+        <!-- 1. Proveedores -->
         <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('proveedores')" style="border-left:4px solid #4338ca;">
           <div class="sidebar-nav-icon icon-proveed">
             <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
@@ -2776,121 +2873,44 @@
           <span style="font-size:0.7rem; color:#4338ca; font-weight:800;">&gt;</span>
         </div>
 
-        <button type="button" class="btn-secondary" onclick="cerrarSidebarMenu()" style="margin-top:auto; font-weight:800;">
-          <span>Cerrar Menú</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================== -->
-  <!-- SIDEBAR DERECHO: MÉTRICAS, REPORTES, CONFIGURACIÓN Y SYNC -->
-  <!-- ======================================================== -->
-  <div id="sidebar-metricas-dia" class="sidebar-overlay-right" onclick="cerrarSidebarsSiBackdrop(event)">
-    <div class="sidebar-panel-right">
-      <div class="sidebar-header">
-        <h3>
-          <svg style="width:20px;height:20px;stroke:#ffffff;fill:none;stroke-width:2.2;" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          <span>Métricas y Negocio</span>
-        </h3>
-        <button type="button" class="modal-btn-close" onclick="cerrarSidebarMetricas()" style="background:rgba(255,255,255,0.2); color:#ffffff; width:28px; height:28px; border:none; border-radius:50%; font-size:0.9rem; cursor:pointer;">x</button>
-      </div>
-
-      <div class="sidebar-body">
-        <div style="font-size:0.72rem; color:var(--text-muted); font-weight:800;  margin-bottom:0.1rem;">Resumen del Día</div>
-
-        <!-- 1. Ventas del Día -->
-        <div class="sidebar-kpi-card" onclick="cerrarSidebarMetricas(); abrirModuloPrincipal('ventas');" style="border-left:4px solid var(--green-accent);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
-            <span class="kpi-label" style="font-size:0.75rem; display:flex; align-items:center; gap:0.35rem;">
-              <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--green-accent);fill:none;stroke-width:2.2;"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <strong>Ventas del Día</strong>
-            </span>
-            <span style="font-size:0.68rem; color:var(--green-accent); font-weight:800;">Ver TPV &gt;</span>
-          </div>
-          <div class="kpi-value" id="dash-ventas-hoy" style="font-size:1.35rem; font-weight:900; color:var(--green-deep); margin:0.15rem 0;">$0</div>
-          <div class="kpi-sub" id="dash-ventas-cant" style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">0 tickets cobrados</div>
-        </div>
-
-        <!-- 2. Gastos del Día -->
-        <div class="sidebar-kpi-card" onclick="cerrarSidebarMetricas(); abrirModuloPrincipal('gastos');" style="border-left:4px solid var(--danger);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
-            <span class="kpi-label" style="font-size:0.75rem; display:flex; align-items:center; gap:0.35rem;">
-              <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--danger);fill:none;stroke-width:2.2;"><path d="M14 2H6a2 2 0 0 0-2 2v16l3-2 3 2 3-2 3 2V4a2 2 0 0 0-2-2z"/></svg>
-              <strong>Gastos del Día</strong>
-            </span>
-            <span style="font-size:0.68rem; color:var(--danger); font-weight:800;">Ver Gastos &gt;</span>
-          </div>
-          <div class="kpi-value" id="dash-gastos-hoy" style="font-size:1.35rem; font-weight:900; color:var(--danger); margin:0.15rem 0;">$0</div>
-          <div class="kpi-sub" id="dash-gastos-cant" style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">0 pagos registrados</div>
-        </div>
-
-        <!-- 3. Ganancia Estimada -->
-        <div class="sidebar-kpi-card" onclick="cerrarSidebarMetricas(); abrirModuloPrincipal('reportes');" style="border-left:4px solid var(--amber-accent);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
-            <span class="kpi-label" style="font-size:0.75rem; display:flex; align-items:center; gap:0.35rem;">
-              <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--amber-accent);fill:none;stroke-width:2.2;"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-              <strong>Ganancia Estimada</strong>
-            </span>
-            <span style="font-size:0.68rem; color:var(--amber-accent); font-weight:800;">Reportes &gt;</span>
-          </div>
-          <div class="kpi-value" id="dash-ganancia-hoy" style="font-size:1.35rem; font-weight:900; margin:0.15rem 0;">$0</div>
-          <div class="kpi-sub" id="dash-ganancia-margen" style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">Balance neto de hoy</div>
-        </div>
-
-        <!-- 4. Stock Crítico -->
-        <div class="sidebar-kpi-card" onclick="cerrarSidebarMetricas(); abrirSubPopupStockBajo();" style="border-left:4px solid var(--orange-accent);">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.25rem;">
-            <span class="kpi-label" style="font-size:0.75rem; display:flex; align-items:center; gap:0.35rem;">
-              <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:var(--orange-accent);fill:none;stroke-width:2.2;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <strong>Stock Crítico</strong>
-            </span>
-            <span style="font-size:0.68rem; color:var(--orange-accent); font-weight:800;">Ver Alertas &gt;</span>
-          </div>
-          <div class="kpi-value" id="dash-stock-critico" style="font-size:1.35rem; font-weight:900; color:var(--orange-accent); margin:0.15rem 0;">0</div>
-          <div class="kpi-sub" style="font-size:0.72rem; color:var(--text-muted); font-weight:700;">Artículos bajo mínimo</div>
-        </div>
-
-        <div style="font-size:0.72rem; color:var(--text-muted); font-weight:800;  margin-top:0.4rem; margin-bottom:0.1rem;">Administración y Control</div>
-
-        <!-- 5. Reportes (EN EL SIDEBAR DERECHO DE MÉTRICAS) -->
-        <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('reportes')" style="border-left:4px solid var(--amber-accent);">
+        <!-- 2. Reportes -->
+        <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('reportes')" style="border-left:4px solid var(--green-accent);">
           <div class="sidebar-nav-icon icon-reportes">
             <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
           <div style="flex:1;">
-            <div style="font-weight:800; font-size:0.88rem; color:var(--text-main);">Reportes</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">Rentabilidad, ventas y gráficos</div>
+            <div style="font-weight:800; font-size:0.88rem; color:var(--text-main);">Reportes y Gráficos</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Análisis de ventas, gastos y balance</div>
           </div>
-          <span style="font-size:0.7rem; color:var(--amber-accent); font-weight:800;">&gt;</span>
+          <span style="font-size:0.7rem; color:var(--green-accent); font-weight:800;">&gt;</span>
         </div>
 
-        <!-- 6. Configuración (EN EL SIDEBAR DERECHO DE MÉTRICAS) -->
+        <!-- 3. Configuración -->
         <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('configuracion')" style="border-left:4px solid #475569;">
           <div class="sidebar-nav-icon icon-config">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
           </div>
           <div style="flex:1;">
             <div style="font-weight:800; font-size:0.88rem; color:var(--text-main);">Configuración</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">Medios de pago, ticket y respaldo</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Ticket, métodos de pago y licencia</div>
           </div>
           <span style="font-size:0.7rem; color:#475569; font-weight:800;">&gt;</span>
         </div>
 
-        <!-- 7. Sincronización (EN EL SIDEBAR DERECHO DE MÉTRICAS) -->
+        <!-- 4. Sincronización -->
         <div class="sidebar-nav-item" onclick="abrirModuloPrincipal('sincronizacion')" style="border-left:4px solid var(--orange-accent);">
           <div class="sidebar-nav-icon icon-sync">
             <svg viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/><path d="M2.5 22v-6h6M2.66 8.43a10 10 0 0 1 .57 8.38l-5.67 5.67"/></svg>
           </div>
           <div style="flex:1;">
             <div style="font-weight:800; font-size:0.88rem; color:var(--text-main);">Sincronización</div>
-            <div style="font-size:0.7rem; color:var(--text-muted);">Exportar e importar por WhatsApp</div>
+            <div style="font-size:0.7rem; color:var(--text-muted);">Exportar e importar respaldos</div>
           </div>
           <span style="font-size:0.7rem; color:var(--orange-accent); font-weight:800;">&gt;</span>
         </div>
 
-        <button type="button" class="btn-secondary" onclick="cerrarSidebarMetricas()" style="margin-top:auto; font-weight:800;">
-          <span>Cerrar Panel</span>
+        <button type="button" class="btn-secondary" onclick="cerrarSidebarMenu()" style="margin-top:auto; font-weight:800;">
+          <span>Cerrar Menú</span>
         </button>
       </div>
     </div>
@@ -2999,11 +3019,10 @@
       <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
       <span>Compras</span>
     </button>
-    <button type="button" class="bottom-dock-item" id="dock-btn-ventas" onclick="abrirModuloPrincipal('ventas')">
-      <svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-      <span>Venta</span>
+    <button type="button" class="bottom-dock-plus-btn" id="dock-btn-rapida" onclick="abrirPopupOperacionRapida('venta')" title="Registrar Venta Rápida">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </button>
-    <button type="button" class="bottom-dock-item" id="dock-btn-metricas" onclick="toggleSidebarMetricas()">
+    <button type="button" class="bottom-dock-item" id="dock-btn-metricas" onclick="abrirModuloPrincipal('reportes')">
       <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
       <span>Métricas</span>
     </button>
@@ -3061,6 +3080,11 @@
             <svg style="color:#246A49;" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
             <span>Categorías y Rubros</span>
           </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.85rem;">
+          <button type="button" class="btn-secondary" onclick="exportarStockCSV()" style="font-size:0.78rem;">Exportar CSV (Excel)</button>
+          <button type="button" class="btn-secondary" onclick="document.getElementById('input-import-csv-stock').click()" style="font-size:0.78rem;">Importar CSV</button>
+          <input type="file" id="input-import-csv-stock" accept=".csv,text/csv" style="display:none;" onchange="importarStockCSV(event)" />
         </div>
       </div>
     </div>
@@ -3339,6 +3363,30 @@
 
         <div style="font-size:0.75rem; font-weight:800; color:var(--green-accent);  margin-top:0.4rem;">Canales de Venta</div>
         <button class="btn-secondary" onclick="abrirSubPopup('popup-sub-canales-venta')">Administrar Canales de Venta</button>
+
+        <div style="font-size:0.75rem; font-weight:800; color:var(--green-accent); margin-top:0.6rem;">Funciones de Almacén Grande (Opcional)</div>
+        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:0.75rem; display:flex; flex-direction:column; gap:0.55rem; font-size:0.82rem;">
+          <label style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; cursor:pointer;">
+            <span><strong>Códigos de barras / SKU</strong></span>
+            <input type="checkbox" id="mod-almacen-barras" onchange="toggleModuloAlmacen('barras', this.checked)" style="width:20px;height:20px;accent-color:var(--green-accent);" />
+          </label>
+          <label style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; cursor:pointer;">
+            <span><strong>Control de vencimientos (FEFO)</strong></span>
+            <input type="checkbox" id="mod-almacen-vencimientos" onchange="toggleModuloAlmacen('vencimientos', this.checked)" style="width:20px;height:20px;accent-color:var(--green-accent);" />
+          </label>
+          <label style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; cursor:pointer;">
+            <span><strong>Equivalencia bulto / unidad</strong></span>
+            <input type="checkbox" id="mod-almacen-bultos" onchange="toggleModuloAlmacen('bultos', this.checked)" style="width:20px;height:20px;accent-color:var(--green-accent);" />
+          </label>
+          <label style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; cursor:pointer;">
+            <span><strong>Listas de precios mayoristas</strong></span>
+            <input type="checkbox" id="mod-almacen-mayorista" onchange="toggleModuloAlmacen('mayorista', this.checked)" style="width:20px;height:20px;accent-color:var(--green-accent);" />
+          </label>
+          <label style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; cursor:pointer;">
+            <span><strong>Stock separado (Depósito / Salón)</strong></span>
+            <input type="checkbox" id="mod-almacen-deposito" onchange="toggleModuloAlmacen('deposito', this.checked)" style="width:20px;height:20px;accent-color:var(--green-accent);" />
+          </label>
+        </div>
 
         <div style="font-size:0.75rem; font-weight:800; color:var(--green-accent);  margin-top:0.4rem;">Respaldos y Seguridad</div>
         <button class="btn-main" onclick="exportarBackupJSON()">Exportar Respaldo Completo (.json)</button>
@@ -4185,6 +4233,10 @@
         <div class="form-group">
           <label>Observaciones</label>
           <input type="text" id="fp-obs" placeholder="Ej: Calidad premium, proveedor quinta La Plata..." maxlength="120" />
+        </div>
+        <div class="form-group" id="fp-codigo-group" style="display:none;">
+          <label>Código de Barras / SKU</label>
+          <input type="text" id="fp-codigo" placeholder="Escaneá o escribí el código..." maxlength="40" />
         </div>
         <button class="btn-main" onclick="guardarProductoStock()">Guardar Producto</button>
       </div>
@@ -5489,16 +5541,134 @@
     function abrirModuloPrincipal(modulo) {
       cerrarSidebarMenu();
       cerrarSidebarMetricas();
+      document.querySelectorAll('[id^="modal-modulo-"].open').forEach(m => {
+        if(m.id !== 'modal-modulo-' + modulo) {
+          m.classList.remove('open');
+          m.style.display = 'none';
+        }
+      });
       const modalId = 'modal-modulo-' + modulo;
       const el = document.getElementById(modalId);
       if(el) {
         el.style.display = 'flex';
+        const body = el.querySelector('.modal-body');
+        if(body) body.scrollTop = 0;
         setTimeout(() => el.classList.add('open'), 10);
       }
       if(modulo === 'reportes') renderizarReporteCompleto('hoy');
       if(modulo === 'stock') actualizarBadgesStock();
       if(modulo === 'sincronizacion') actualizarVistaSincronizacion();
-      if(modulo === 'configuracion') actualizarDatosNegocioEnTodaLaUI();
+      if(modulo === 'configuracion') { actualizarDatosNegocioEnTodaLaUI(); cargarModulosAlmacen(); }
+    }
+
+    function obtenerModulosAlmacen() {
+      try {
+        return JSON.parse(localStorage.getItem('cajarapida_modulos_almacen') || '{}');
+      } catch(e) { return {}; }
+    }
+
+    function cargarModulosAlmacen() {
+      const cfg = obtenerModulosAlmacen();
+      ['barras','vencimientos','bultos','mayorista','deposito'].forEach(k => {
+        const el = document.getElementById('mod-almacen-' + k);
+        if(el) el.checked = !!cfg[k];
+      });
+    }
+
+    function toggleModuloAlmacen(key, val) {
+      const cfg = obtenerModulosAlmacen();
+      cfg[key] = !!val;
+      localStorage.setItem('cajarapida_modulos_almacen', JSON.stringify(cfg));
+    }
+
+    function exportarStockCSV() {
+      const sep = ';';
+      const header = ['codigo', 'nombre', 'categoria', 'unidad', 'precioCompra', 'precioVenta', 'stock', 'stockMin'].join(sep);
+      const rows = productos.map(p => [
+        (p.codigo || '').replace(/;/g, ''),
+        (p.nombre || '').replace(/;/g, ''),
+        (p.categoria || '').replace(/;/g, ''),
+        p.unidad || 'un',
+        p.precioCompra || 0,
+        p.precioVenta || 0,
+        p.stock || 0,
+        p.stockMin || 15
+      ].join(sep));
+      const csv = '\uFEFF' + [header, ...rows].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'stock-caja-rapida.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    function importarStockCSV(event) {
+      const file = event.target.files?.[0];
+      if(!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = (e.target?.result || '').replace(/^\uFEFF/, '');
+        const lines = text.split(/\r?\n/).filter(l => l.trim());
+        if(lines.length < 2) { alert('El archivo CSV está vacío o no tiene filas.'); return; }
+        const sep = lines[0].includes(';') ? ';' : ',';
+        let actualizados = 0, agregados = 0;
+        for(let i = 1; i < lines.length; i++) {
+          const cols = lines[i].split(sep).map(c => c.trim());
+          if(cols.length < 6) continue;
+          const [codigo, nombre, categoria, unidad, pCompra, pVenta, stock, stockMin] = cols;
+          if(!nombre) continue;
+          const precioCompra = parseFloat(pCompra) || 0;
+          const precioVenta = parseFloat(pVenta) || 0;
+          if(precioVenta <= 0) continue;
+          const st = parseFloat(stock) || 0;
+          const stMin = parseFloat(stockMin) || 15;
+          const un = unidad || 'un';
+          const cat = categoria || 'Almacén';
+          const existente = productos.find(p =>
+            (codigo && p.codigo && p.codigo.toLowerCase() === codigo.toLowerCase()) ||
+            p.nombre.toLowerCase() === nombre.toLowerCase()
+          );
+          if(existente) {
+            if(codigo) existente.codigo = codigo;
+            existente.categoria = cat;
+            existente.unidad = un;
+            existente.precioCompra = precioCompra;
+            existente.precioVenta = precioVenta;
+            existente.margenPorc = calcularMargenProducto(precioCompra, precioVenta);
+            existente.precioUnidad = un === 'un' ? precioVenta : Math.round(precioVenta * 0.25);
+            existente.stock = st;
+            existente.stockMin = stMin;
+            actualizados++;
+          } else {
+            productos.push({
+              id: Date.now() + i,
+              codigo: codigo || undefined,
+              nombre,
+              categoria: cat,
+              unidad: un,
+              precioCompra,
+              precioVenta,
+              margenPorc: calcularMargenProducto(precioCompra, precioVenta),
+              precioUnidad: un === 'un' ? precioVenta : Math.round(precioVenta * 0.25),
+              stock: st,
+              stockMin: stMin,
+              obs: ''
+            });
+            agregados++;
+          }
+        }
+        guardarProductos();
+        poblarSelectoresProductos();
+        renderizarChipsProdsFrecuentes();
+        actualizarDashboard();
+        event.target.value = '';
+        alert('CSV importado: ' + actualizados + ' actualizados y ' + agregados + ' agregados.');
+      };
+      reader.readAsText(file, 'UTF-8');
     }
 
     function cerrarModal(modalId) {
@@ -7652,6 +7822,10 @@
       document.getElementById('fp-stock').value = '';
       document.getElementById('fp-stock-min').value = '15';
       document.getElementById('fp-obs').value = '';
+      const fpCod = document.getElementById('fp-codigo');
+      const fpCodGrp = document.getElementById('fp-codigo-group');
+      if(fpCod) fpCod.value = '';
+      if(fpCodGrp) fpCodGrp.style.display = obtenerModulosAlmacen().barras ? 'block' : 'none';
       const badge = document.getElementById('fp-badge-ganancia');
       if(badge) badge.style.display = 'none';
       abrirSubPopup('popup-form-producto');
@@ -7668,6 +7842,7 @@
       const stock = parseFloat(document.getElementById('fp-stock').value) || 0;
       const stockMin = parseFloat(document.getElementById('fp-stock-min').value) || 15;
       const obs = document.getElementById('fp-obs').value.trim();
+      const codigo = (document.getElementById('fp-codigo')?.value || '').trim();
 
       if(!nombre) { alert('El nombre del producto es obligatorio.'); return; }
       if(precioVenta <= 0) { alert('El precio de venta debe ser mayor a 0.'); return; }
@@ -7688,6 +7863,8 @@
           prod.stock = stock;
           prod.stockMin = stockMin;
           prod.obs = obs;
+          if(codigo) prod.codigo = codigo;
+          else delete prod.codigo;
         }
       } else {
         const nuevo = {
@@ -7701,7 +7878,8 @@
           precioUnidad,
           stock,
           stockMin,
-          obs
+          obs,
+          codigo
         };
         productos.push(nuevo);
       }
@@ -7725,7 +7903,7 @@
       const tb = document.getElementById('tbody-buscar-productos');
       if(!tb) return;
 
-      const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(q) || p.categoria.toLowerCase().includes(q));
+      const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(q) || p.categoria.toLowerCase().includes(q) || (p.codigo && p.codigo.toLowerCase().includes(q)));
       const fmt = n => '$' + Math.round(n).toLocaleString('es-AR');
 
       if(!filtrados.length) {
@@ -7764,6 +7942,10 @@
       document.getElementById('fp-stock').value = prod.stock;
       document.getElementById('fp-stock-min').value = prod.stockMin || 15;
       document.getElementById('fp-obs').value = prod.obs || '';
+      const fpCod = document.getElementById('fp-codigo');
+      const fpCodGrp = document.getElementById('fp-codigo-group');
+      if(fpCod) fpCod.value = prod.codigo || '';
+      if(fpCodGrp) fpCodGrp.style.display = obtenerModulosAlmacen().barras ? 'block' : 'none';
       recalcularMargenDesdePrecioVenta();
       abrirSubPopup('popup-form-producto');
     }
